@@ -1,14 +1,14 @@
-import express from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import helmet from "helmet";
-import morgan from "morgan";
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const helmet = require("helmet");
+const morgan = require("morgan");
 
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 8000;
+const port = process.env.PORT || 8000;
 
 // Middlewares
 app.use(express.json());
@@ -18,8 +18,6 @@ app.use(cors());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
-
-const port = process.env.PORT || 8000;
 
 mongoose
   .connect(process.env.DB_URL, {
