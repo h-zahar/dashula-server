@@ -16,12 +16,12 @@ const monthSchema = new mongoose.Schema(
       currency: "USD",
       get: (v) => v / 100,
     },
-    opExpenses: {
+    operationalExpenses: {
       type: mongoose.Types.Currency,
       currency: "USD",
       get: (v) => v / 100,
     },
-    nonOpExpenses: {
+    nonOperationalExpenses: {
       type: mongoose.Types.Currency,
       currency: "USD",
       get: (v) => v / 100,
@@ -32,7 +32,7 @@ const monthSchema = new mongoose.Schema(
 
 const daySchema = new mongoose.Schema(
   {
-    day: String,
+    date: String,
     revenue: {
       type: mongoose.Types.Currency,
       currency: "USD",
